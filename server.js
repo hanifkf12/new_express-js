@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
+app.use(bodyParser.raw({ extended: true }))
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(dbConfig.url,{

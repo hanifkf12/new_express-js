@@ -21,3 +21,15 @@ exports.create = (req, res) => {
             });
         });
 };
+
+exports.read = (req,res) => {
+    Barang.find().then( notes =>{
+        res.status(200).send(
+            {resulst: notes}
+        )
+    }).catch(err=>{
+       res.status(500).send(
+           {result: err}
+       )
+    });
+};
